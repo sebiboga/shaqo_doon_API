@@ -1,7 +1,7 @@
 <?php 
  header('Access-Control-Allow-Origin: *');
  require_once('../db/db_connect.php');
- $sql = "SELECT DISTINCT company, count(id) as total FROM jobs group by company ORDER BY total DESC";
+ $sql = "SELECT  company,link FROM companies";
  
  $obj = new stdClass();
  $obj->companies=array();
@@ -10,8 +10,7 @@
   {  
  	$temp =  new StdClass();
     $temp->company =  $row['company'];
-	$temp->jobs =  $row['total'];
-	$temp->link = "https://api.shaqodoon.ro/jobs/?company=".urlencode($temp->company);
+	$temp->link =  $row['link'];
 	 $obj->companies[] = $temp; 
 }
 $result->close();
