@@ -13,7 +13,7 @@ header('Access-Control-Allow-Origin: *');
 	 
   }
 
- $sql = "SELECT count(DISTINCT company) as total FROM jobs ";
+ $sql = "SELECT count(DISTINCT company) as total FROM companies ";
  $result = mysqli_query($concompany, $sql);
  while($row = $result->fetch_array())
  {  
