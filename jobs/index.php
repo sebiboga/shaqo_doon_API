@@ -27,6 +27,12 @@ header('Access-Control-Allow-Origin: *');
  
  
  
+  if (isset($_GET['results'])) {
+	 $results = $_GET['results'];
+
+	 $sql .= " LIMIT $results";
+ }
+ 
  
  $obj = new stdClass();
  $obj->jobs=array();
