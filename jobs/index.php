@@ -34,8 +34,18 @@ header('Access-Control-Allow-Origin: *');
 	  $where[]= "q='$q'";
 	 }
  
+ $sqlwhere='';
+ $i=0;
+ foreach($where as $item)
+ {  $i++;
+    if ($i<count($where))
+	 $sqlwhere.=$item." AND ";
+	 else 
+	 $sqlwhere.=$item." ";
+	 
+ }
  
- print_r($where);
+ echo $sqlwhere;
  
   if (isset($_GET['results'])) {
 	 $results = $_GET['results'];
