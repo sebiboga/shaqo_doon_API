@@ -44,8 +44,7 @@ header('Access-Control-Allow-Origin: *');
 	 $sqlwhere.=$item." ";
 	 
  }
- 
- $sql=$sql.$sqlwhere;
+echo $sql.$sqlwhere;
  
   if (isset($_GET['results'])) {
 	 $results = $_GET['results'];
