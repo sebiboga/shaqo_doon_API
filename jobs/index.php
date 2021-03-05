@@ -31,7 +31,7 @@ header('Access-Control-Allow-Origin: *');
 	 if ($_GET['q']!="")
 	 {
 	  $q = $_GET['q'];
-	  $where[]= "q='$q'";
+	  $where[]= "title like '%$q%'";
 	 }
  
  $sqlwhere=' WHERE ';
@@ -44,7 +44,7 @@ header('Access-Control-Allow-Origin: *');
 	 $sqlwhere.=$item." ";
 	 
  }
-echo $sql.$sqlwhere;
+    $sql.=$sqlwhere;
  
   if (isset($_GET['results'])) {
 	 $results = $_GET['results'];
