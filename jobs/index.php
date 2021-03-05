@@ -3,29 +3,39 @@ header('Access-Control-Allow-Origin: *');
  require_once('../db/db_connect.php');
  $sql = "SELECT * FROM jobs ";
  
+ $where = array();
  
  
- if(isset($_GET['city'])) 
+ if(isset($_GET['city']))
+  if ($_GET['city']!="") 
  {
 	 $city = $_GET['city'];
-
-	 $sql .= "WHERE city= '$city'";
+	 $where[]= "city='$city'";
  }
- else
- if(isset($_GET['country'])) 
+
+ if(isset($_GET['country']))
+    if($_GET['country']!="") 
  {
 	 $country = $_GET['country'];
-
-	 $sql .= "WHERE country= '$country'";
+	 $where[]= "country='$country'";
  }
- else
- if (isset($_GET['company'])) {
+ 
+ if (isset($_GET['company'])) 
+   if ($_GET['company']!="") 
+ {
 	 $company = $_GET['company'];
-
-	 $sql .= "WHERE company= '$company'";
+	 $where[]= "company='$company'";
  }
  
+ if (isset($_GET['q'])) 
+	 if ($_GET['q']!="")
+	 {
+	  $q = $_GET['q'];
+	  $where[]= "q='$q'";
+	 }
  
+ 
+ print_r($where);
  
   if (isset($_GET['results'])) {
 	 $results = $_GET['results'];
