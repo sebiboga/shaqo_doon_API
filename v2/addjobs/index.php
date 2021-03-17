@@ -67,6 +67,12 @@ function city_translate($city) {
 if ($obj->key=='53d0ac1a-966c-4093-89a1-4dcad57e8de5')
  echo 'Esti meseriash';
  
+ foreach (getallheaders() as $name => $value) {
+    echo "$name: $value\n";
+}
+
+ 
+ 
 if ($_POST['action']=='insert')
 {
 
