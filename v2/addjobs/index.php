@@ -62,8 +62,11 @@ function city_translate($city) {
  $obj->city    = city_translate($_POST['city']);
  $obj->country    = country_translate($_POST['country']);
  $obj->link    = $_POST['link'];
+ $obj->key    = $_POST['APIKey'];
 
-
+if ($obj->key=='53d0ac1a-966c-4093-89a1-4dcad57e8de5')
+ echo 'Esti meseriash';
+ 
 if ($_POST['action']=='insert')
 {
 
