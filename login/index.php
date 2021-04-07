@@ -26,7 +26,7 @@ require_once('../db/db_connect.php');
 mysqli_query($concompany, $sql);
 mysqli_close($concompany);
 
-if ($obj->username=="" && $obj->password =='') {echo '{"message":"success", "token":"aaf14e57-3109-4e4d-9666-671aec0a68ef"}';}
+if ($obj->username==" sebi@shaqodoon.ro" && $obj->password =='passwd') {echo '{"message":"success", "token":"aaf14e57-3109-4e4d-9666-671aec0a68ef"}';}
   else 
 	  echo '{"message":"error", "reason":"credentials error"}';
 }
