@@ -6,9 +6,11 @@ header('Access-Control-Allow-Origin: *');
 //echo $_POST['username'];
 
 
-if ($_POST['username'])
+if ($_POST['username']) {
 	if ($_POST['username']!='')
+	{
 	   if ($_POST['password'])
+	   {
 		   if ($_POST['password']!='')
 		   
 {
@@ -32,6 +34,15 @@ if ($obj->username=="sebi@shaqodoon.ro" && $obj->password =='passwd') {echo '{"m
   else 
 	  echo '{"message":"error", "reason":"credentials error"}';
 }
-
+  else 
+	   echo '{"message":"error", "reason":"credentials error"}';
+	   }
+	    else 
+	    echo '{"message":"error", "reason":"credentials error"}';
+	} 
+	 else 
+	   echo '{"message":"error", "reason":"credentials error"}';
+}  else 
+	   echo '{"message":"error", "reason":"credentials error"}';
 
 ?>
