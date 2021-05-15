@@ -29,7 +29,6 @@ if (isset($_POST['username']))
 				echo '{message:"success", "token": "'.$row['token'].'"}';
 			}
 			else {
-				echo $obj->username;
 				echo '{message:"Email or password incorrect!"}';
 
 			} 
