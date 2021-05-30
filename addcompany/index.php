@@ -19,6 +19,11 @@ function guid(){
 
 
  
+ //citesc token din header
+ // in REQUEST HEADER astept o keye: token cu valoarea: primita la login
+ //   token: XXXXX-XXXXX-XXXXX-XXXXX
+ //compar tokenul in baza de date daca exista
+ //daca exista -- update in loc de INSERT
  
  
  
