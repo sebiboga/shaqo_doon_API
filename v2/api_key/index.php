@@ -60,7 +60,7 @@ $concompany = mysqli_connect($server,$username,$password,$database) or die( mysq
  $sql = "UPDATE companies SET API_key = '$obj->api_key' WHERE token='".get_token()."'";}
       else {
 	if ($_SERVER['REQUEST_METHOD'] == 'GET') {	  
-	$sql = "SELECT API_key FROM  companies ' WHERE token='".get_token()."'";
+	$sql = "SELECT API_key FROM  companies  WHERE token='".get_token()."'";
 	$result = mysqli_query($concompany, $sql);
 	 while($row = $result->fetch_array())
      {     $obj->api_key =  $row['API_key'];   }
