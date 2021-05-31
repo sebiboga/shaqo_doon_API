@@ -1,6 +1,8 @@
 <?php 
 header('Access-Control-Allow-Origin: *');
  /* prepare the id for each row in the database; id is a GUID */
+ require_once('../../db/db_connect.php');
+ 
 function guid(){
         mt_srand((double)microtime()*10000);//optional for php 4.2.0 and up.
         $charid = strtoupper(md5(uniqid(rand(), true)));
@@ -27,7 +29,7 @@ function get_token() {
  
  function valid_token($token) {
 	$sql = "SELECT `id` FROM `companies` WHERE token ='".$token."'";
-    require_once('../../db/db_connect.php');
+    
     $result = mysqli_query($concompany, $sql);
 	
    while($row = $result->fetch_array())
@@ -46,14 +48,10 @@ function get_token() {
 
 if (valid_token(get_token()))
 {
-
-require_once('../../db/db_connect.php');
-
-
  $sql = "UPDATE companies SET company = '$obj->company',link='$obj->link' WHERE token='".get_token()."'";
 
-
 mysqli_query($concompany, $sql);
-mysqli_close($concompany);
 }
+mysqli_close($concompany);
+
 ?>
