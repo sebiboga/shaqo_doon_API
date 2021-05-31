@@ -29,7 +29,13 @@ function get_token() {
  
  function valid_token($token) {
 	$sql = "SELECT `id` FROM `companies` WHERE token ='".$token."'";
-    require('../../db/db_connect.php');
+    
+$server = "localhost";
+$database = "shaqodoo_jobs";
+$username = "shaqodoo_infopower";
+$password = "ramona2@1";
+$concompany = mysqli_connect($server,$username,$password,$database) or die( mysql_error() );
+	
     $result = mysqli_query($concompany, $sql);
 	
    while($row = $result->fetch_array())
@@ -48,8 +54,15 @@ function get_token() {
 
 if (valid_token(get_token()))
 {
+	
+$server = "localhost";
+$database = "shaqodoo_jobs";
+$username = "shaqodoo_infopower";
+$password = "ramona2@1";
+
+$concompany = mysqli_connect($server,$username,$password,$database) or die( mysql_error() );
  $sql = "UPDATE companies SET company = '$obj->company',link='$obj->link' WHERE token='".get_token()."'";
-require('../../db/db_connect.php');
+
 mysqli_query($concompany, $sql);
 mysqli_close($concompany);
 }
