@@ -7,7 +7,7 @@ function get_token() {
      if (isset($headers['token']))
        return $headers['token'];
      else
-        return "jhdkfjjgkdjgfhgdhghj";
+        return null;
  }
 
 function update_company($token) {
@@ -17,7 +17,6 @@ function update_company($token) {
         $sql = "SELECT * FROM companies";
         $result = mysqli_query($concompany, $sql);
 		$records_found = mysqli_num_rows($result);
-		//echo "no: " . var_dump($records_found);
 
          while($row = $result->fetch_array())
           {
@@ -32,7 +31,7 @@ function update_company($token) {
             return;
            }
           echo '{"message":"Could not update the data"}';
-
+          return;
     }
 
     echo '{"message":"Authentication token does not exist"}';
