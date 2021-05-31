@@ -63,7 +63,7 @@ $password = "ramona2@1";
 $concompany = mysqli_connect($server,$username,$password,$database) or die( mysql_error() );
  $sql = "UPDATE companies SET company = '$obj->company',link='$obj->link' WHERE token='".get_token()."'";
  
- echo $sql;
+ //need to remove the connection string from here and add get them from external file [todo]
 
 mysqli_query($concompany, $sql);
 mysqli_close($concompany);
