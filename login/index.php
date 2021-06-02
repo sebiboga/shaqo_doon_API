@@ -1,5 +1,7 @@
 <?php 
 header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: *');
+
  /* prepare the id for each row in the database; id is a GUID */
 
 
