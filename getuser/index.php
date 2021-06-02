@@ -25,7 +25,7 @@ function get_user($token) {
     $obj->id =  $row['id'];
 	$obj->company   =  $row['company'];
 	$obj->link   =  $row['link'];
-	$obj->token   =  $row['API_key'];
+	$obj->api_key   =  $row['API_key'];
   }
   
   return json_encode($obj);
