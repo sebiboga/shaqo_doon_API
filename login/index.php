@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: *');
 
  /* prepare the id for each row in the database; id is a GUID */
-
+$message = new stdClass();
 
 if (isset($_POST['username'])) 
 {
@@ -28,11 +28,17 @@ if (isset($_POST['username']))
 			
 			if($records_found > 0) {
 				$row = mysqli_fetch_array($result);
-				echo '{message:"success", "token": "'.$row['token'].'"}';
+				$message -> message = "success";
+				$message -> token = $row['token'];
+				echo json_encode($message);
 			}
 			else {
 				 http_response_code(401);
-				echo '{message:"Email or password incorrect!"}';
+				$message -> message = "Email or password incorrect!";
+				
+				echo json_encode($message);
+
+				
 
 			} 
 			
