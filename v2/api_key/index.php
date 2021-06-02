@@ -1,5 +1,6 @@
 <?php 
 header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: *');
 
 function guid(){
         mt_srand((double)microtime()*10000);//optional for php 4.2.0 and up.
