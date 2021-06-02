@@ -69,7 +69,7 @@ $concompany = mysqli_connect($server,$username,$password,$database) or die( mysq
 	  }
  
  //need to remove the connection string from here and add get them from external file [todo]
- echo json_encode($obj->api_key);
+ echo json_encode($obj);
 mysqli_query($concompany, $sql);
 mysqli_close($concompany);
 }
